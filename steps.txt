@@ -1,0 +1,45 @@
+> mkdir webpack-boilerplate
+> cd webpack-boilerplate
+> npm init
+> mkdir src dist src/assets src/assets/media src/assets/js src/assets/scss
+> touch webpack.config.js README.md .babelrc src/index.html src/app.js src/assets/scss/app.scss
+
+NOTE:
+.babelrc file is for configuring babel (which is going to transpile our ES6/ES2015 code to ES5)
+webpack.config.js for configuring our webpack’s responsibilities
+README.md for documentation
+
+npm i -D webpack      or    npm install — save-dev webpack
+
+
+If webpack is already installed globally in your machine, simply write these commands into your package.json scripts:
+
+"scripts": {
+  "build": "webpack",
+  "build:prod": "webpack -p",
+  "watch": "webpack --watch"
+}
+
+If you installed webpack locally, then, changes in package.json would be:
+
+"scripts": {
+  "build": "./node_modules/.bin/webpack",
+  "build:prod": "./node_modules/.bin/webpack -p",
+  "watch": "./node_modules/.bin/webpack --watch"
+}
+
+
+Webpack simply needs to have it’s 4 core things to execute properly.
+ 1. Entry
+ 2. Output
+ 3. Loaders
+ 4. Plugins
+
+
+Exporting our config object - webpack.config.js
+
+const config = {
+  // configurations here
+};
+module.exports = config;
+npm i -D webpack-dev-server
